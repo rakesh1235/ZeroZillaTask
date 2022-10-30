@@ -10,7 +10,7 @@ const { body, validationResult } = require("express-validator");
 mongoConnect();
 const app = express();
 app.use(express.json());
-const port = 2111;
+const port = process.env.PORT || 2111;
 
 app.use((req, res, next) => {
   require("./middleware/tokenize")(req, res, next);
